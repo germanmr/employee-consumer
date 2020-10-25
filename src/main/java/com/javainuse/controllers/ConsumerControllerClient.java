@@ -8,25 +8,26 @@ import java.io.IOException;
 
 public class ConsumerControllerClient {
 
-    private static HttpEntity<?> getHeaders() throws IOException {
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
-        return new HttpEntity<>(headers);
-    }
-
-    public void getEmployee() throws RestClientException, IOException {
-
-        String dockerProducerContainer = "producer";
-        String localUrl = "localhost";
-        String baseUrl = "http://" + dockerProducerContainer + ":8080/employee";
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = null;
-        try {
-            response = restTemplate.exchange(baseUrl,
-                    HttpMethod.GET, getHeaders(), String.class);
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
-        System.out.println(response.getBody());
-    }
+//    private static HttpEntity<?> getHeaders() throws IOException {
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+//        return new HttpEntity<>(headers);
+//    }
+//
+//    public void getEmployee() throws RestClientException, IOException {
+//
+////        String dockerProducerContainer = "producer";
+//        String dockerProducerContainer = "localhost";
+//        String localUrl = "localhost";
+//        String baseUrl = "http://" + dockerProducerContainer + ":8080/employee";
+//        RestTemplate restTemplate = new RestTemplate();
+//        ResponseEntity<String> response = null;
+//        try {
+//            response = restTemplate.exchange(baseUrl,
+//                    HttpMethod.GET, getHeaders(), String.class);
+//        } catch (Exception ex) {
+//            System.out.println(ex);
+//        }
+//        System.out.println(response.getBody());
+//    }
 }
